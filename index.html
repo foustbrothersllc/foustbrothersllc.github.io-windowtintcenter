@@ -268,25 +268,6 @@
         }
 
         /* Car Image Section */
-        .car-section {
-            background: transparent;
-            padding: 80px 20px;
-        }
-
-        .car-container {
-            max-width: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .car-image {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
-        }
-
         /* Map Section */
         .map-section {
             background: #0f0f0f;
@@ -493,6 +474,26 @@
             transform: scale(1.05);
         }
 
+        .review-button {
+            display: block;
+            margin: 0 auto;
+            background: #FF6B6B;
+            color: #ffffff;
+            padding: 16px 50px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .review-button:hover {
+            background: #FF8E8E;
+            transform: translateY(-2px);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -576,13 +577,6 @@
         </div>
     </section>
 
-    <!-- Car Section with Tint Styles -->
-    <section class="car-section">
-        <div class="car-container">
-            <img src="tinted-car.jpg" alt="Tinted Car" class="car-image" style="width:100%;max-width:90%;">
-        </div>
-    </section>
-
     <!-- Tint Styles Section -->
     <section class="tint-section">
         <div class="tint-container">
@@ -663,6 +657,9 @@
             
             <div class="gallery-grid">
                 <div class="gallery-item">
+                    <img src="tinted-car.jpg" alt="Tinted Car">
+                </div>
+                <div class="gallery-item">
                     <img src="GMC.jpg" alt="GMC Tint">
                 </div>
                 <div class="gallery-item">
@@ -699,6 +696,7 @@
                     <img src="POR.jpg" alt="Porsche Tint">
                 </div>
             </div>
+            <button class="review-button" onclick="openGoogleReview()">Leave a Review</button>
         </div>
     </section>
 
@@ -763,6 +761,11 @@
             } else {
                 window.open('https://www.google.com/maps/dir/?api=1&destination=36.0388,-79.8559', '_blank');
             }
+        }
+
+        // Open Google Review function
+        function openGoogleReview() {
+            window.open('https://www.google.com/maps/place/3808+W+Gate+City+Blvd+Suite+L,+Greensboro,+NC+27407/@36.0388,-79.8559,15z/data=!4m6!3m5!1s0x885a9d6b8d8d8d8d:0x8d8d8d8d8d8d8d8d!8m2!3d36.0388!4d-79.8559!16s%2Fg%2F1hc_j2vwk?entry=ttu', '_blank');
         }
 
         // Smooth scroll behavior
