@@ -97,7 +97,7 @@
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-position: center;
+            background-position: center center;
             background-attachment: fixed;
             z-index: 1;
         }
@@ -269,12 +269,12 @@
 
         /* Car Image Section */
         .car-section {
-            background: linear-gradient(180deg, #1a1a1a 0%, #252525 100%);
+            background: transparent;
             padding: 80px 20px;
         }
 
         .car-container {
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -470,7 +470,7 @@
     <!-- Car Section with Tint Styles -->
     <section class="car-section">
         <div class="car-container">
-            <img src="tinted-car.jpg" alt="Tinted Car" class="car-image" style="width:100%;max-width:500px;">
+            <img src="tinted-car.jpg" alt="Tinted Car" class="car-image" style="width:100%;max-width:90%;">
         </div>
     </section>
 
@@ -584,22 +584,22 @@
         document.getElementById('todaysHours').textContent = dayNames[today] + ": " + hours[today];
 
         // Initialize Map
-        const map = L.map('map').setView([36.0798, -79.7956], 15);
+        const map = L.map('map').setView([36.0388, -79.8559], 15);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 19
         }).addTo(map);
 
-        const marker = L.marker([36.0798, -79.7956]).addTo(map);
+        const marker = L.marker([36.0388, -79.8559]).addTo(map);
         marker.bindPopup("<strong>Window Tint Center</strong><br>3808 W Gate City Blvd Suite L<br>Greensboro, NC 27407<br><a href='tel:3368561218'>(336) 856-1218</a>");
 
         // Navigation function
         function openNavigation() {
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             if (isMobile) {
-                window.open('maps://maps.google.com/maps/dir/?daddr=36.0798,-79.7956', '_blank');
+                window.open('maps://maps.google.com/maps/dir/?daddr=36.0388,-79.8559', '_blank');
             } else {
-                window.open('https://www.google.com/maps/dir/?api=1&destination=36.0798,-79.7956', '_blank');
+                window.open('https://www.google.com/maps/dir/?api=1&destination=36.0388,-79.8559', '_blank');
             }
         }
 
