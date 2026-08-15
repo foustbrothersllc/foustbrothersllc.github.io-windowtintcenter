@@ -754,8 +754,8 @@
 
         // Initialize Map
         const map = L.map('map').setView([36.0388, -79.8559], 15);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri',
             maxZoom: 19
         }).addTo(map);
 
