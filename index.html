@@ -398,6 +398,101 @@
             margin-top: 10px;
         }
 
+        /* Gallery Section */
+        .gallery-section {
+            background: #0f0f0f;
+            padding: 80px 20px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .gallery-header h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .reviews-badge {
+            background: #1a1a1a;
+            border: 2px solid #FF6B6B;
+            border-radius: 8px;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stars {
+            font-size: 24px;
+            color: #FFD700;
+            letter-spacing: 2px;
+        }
+
+        .rating {
+            font-size: 28px;
+            font-weight: 700;
+            color: #FF6B6B;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #b0b0b0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #1a1a1a;
+            border: 2px solid #252525;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(255,107,107,0.3);
+            border-color: #FF6B6B;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -432,6 +527,20 @@
 
             #map {
                 height: 300px;
+            }
+
+            .gallery-header h2 {
+                font-size: 36px;
+            }
+
+            .reviews-badge {
+                flex-direction: column;
+                padding: 15px 25px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
             }
         }
     </style>
@@ -535,6 +644,59 @@
                             <li>Premium investment protection</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Customers Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h2>Previous Customers</h2>
+                <div class="reviews-badge">
+                    <div class="stars">★★★★★</div>
+                    <div class="rating">4.8/5</div>
+                    <div class="review-text">Google Reviews</div>
+                </div>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="GMC.jpg" alt="GMC Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="4Runner.jpg" alt="4Runner Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Mustang.jpg" alt="Mustang Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Bronco.jpg" alt="Bronco Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Tesla.jpg" alt="Tesla Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Suby.jpg" alt="Subaru Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Gladiator.jpg" alt="Gladiator Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="JeepD.jpg" alt="Jeep Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Cleanyukon.jpg" alt="Yukon Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="Chevy.jpg" alt="Chevy Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="DodgeC.jpg" alt="Dodge Tint">
+                </div>
+                <div class="gallery-item">
+                    <img src="POR.jpg" alt="Porsche Tint">
                 </div>
             </div>
         </div>
