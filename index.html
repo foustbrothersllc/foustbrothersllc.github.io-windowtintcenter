@@ -753,22 +753,22 @@
         document.getElementById('todaysHours').textContent = dayNames[today] + ": " + hours[today];
 
         // Initialize Map
-        const map = L.map('map').setView([36.0388, -79.8559], 15);
+        const map = L.map('map').setView([36.0386, -79.8562], 20);
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: '© Esri',
             maxZoom: 19
         }).addTo(map);
 
-        const marker = L.marker([36.0388, -79.8559]).addTo(map);
+        const marker = L.marker([36.0386, -79.8562]).addTo(map);
         marker.bindPopup("<strong>Window Tint Center</strong><br>3808 W Gate City Blvd Suite L<br>Greensboro, NC 27407<br><a href='tel:3368561218'>(336) 856-1218</a>");
 
         // Navigation function
         function openNavigation() {
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             if (isMobile) {
-                window.open('maps://maps.google.com/maps/dir/?daddr=36.0388,-79.8559', '_blank');
+                window.open('maps://maps.google.com/maps/dir/?daddr=36.0386,-79.8562', '_blank');
             } else {
-                window.open('https://www.google.com/maps/dir/?api=1&destination=36.0388,-79.8559', '_blank');
+                window.open('https://www.google.com/maps/dir/?api=1&destination=36.0386,-79.8562', '_blank');
             }
         }
 
