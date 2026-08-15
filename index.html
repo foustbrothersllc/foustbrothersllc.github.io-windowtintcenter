@@ -384,6 +384,20 @@
             margin-top: 15px;
         }
 
+        /* Experience callout */
+        .experience-badge {
+            display: inline-block;
+            background: rgba(255,107,107,0.2);
+            color: #FF8E8E;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
@@ -420,20 +434,6 @@
                 height: 300px;
             }
         }
-
-        /* Experience callout */
-        .experience-badge {
-            display: inline-block;
-            background: rgba(255,107,107,0.2);
-            color: #FF8E8E;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -457,7 +457,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="heroSection">
-        <div class="hero-bg" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAJYBLgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlbaWmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD//Z');"></div>
+        <div class="hero-bg" style="background-image: url('images/storefront.jpg');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">TINT CENTER</h1>
@@ -470,7 +470,7 @@
     <!-- Car Section with Tint Styles -->
     <section class="car-section">
         <div class="car-container">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'%3E%3Crect fill='%23333' width='400' height='250'/%3E%3C/svg%3E" alt="Tinted Car" class="car-image" style="width:100%;max-width:500px;">
+            <img src="images/tinted-car.jpg" alt="Tinted Car" class="car-image" style="width:100%;max-width:500px;">
         </div>
     </section>
 
@@ -584,22 +584,22 @@
         document.getElementById('todaysHours').textContent = dayNames[today] + ": " + hours[today];
 
         // Initialize Map
-        const map = L.map('map').setView([36.0726, -79.7920], 15);
+        const map = L.map('map').setView([36.0798, -79.7956], 15);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap contributors',
             maxZoom: 19
         }).addTo(map);
 
-        const marker = L.marker([36.0726, -79.7920]).addTo(map);
+        const marker = L.marker([36.0798, -79.7956]).addTo(map);
         marker.bindPopup("<strong>Window Tint Center</strong><br>3808 W Gate City Blvd Suite L<br>Greensboro, NC 27407<br><a href='tel:3368561218'>(336) 856-1218</a>");
 
         // Navigation function
         function openNavigation() {
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             if (isMobile) {
-                window.open('maps://maps.google.com/maps/dir/?daddr=36.0726,-79.7920', '_blank');
+                window.open('maps://maps.google.com/maps/dir/?daddr=36.0798,-79.7956', '_blank');
             } else {
-                window.open('https://www.google.com/maps/dir/?api=1&destination=36.0726,-79.7920', '_blank');
+                window.open('https://www.google.com/maps/dir/?api=1&destination=36.0798,-79.7956', '_blank');
             }
         }
 
