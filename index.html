@@ -804,7 +804,15 @@
 
         // Initialize Map
         const map = L.map('map').setView([36.038779, -79.855749], 17);
+        
+        // Satellite layer
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '© Esri',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Labels/text overlay layer
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
             attribution: '© Esri',
             maxZoom: 19
         }).addTo(map);
