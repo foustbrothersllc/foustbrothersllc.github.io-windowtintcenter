@@ -804,12 +804,9 @@
 
         // Initialize Map
         const map = L.map('map').setView([36.038779, -79.855749], 17);
-        
-        // Google Hybrid (Satellite + Labels)
-        L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
-            maxZoom: 19,
-            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-            attribution: '© Google'
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
         }).addTo(map);
 
         const marker = L.marker([36.038779, -79.855749]).addTo(map);
