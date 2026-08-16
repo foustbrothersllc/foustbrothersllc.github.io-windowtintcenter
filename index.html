@@ -462,18 +462,20 @@
 
         .carousel-track {
             display: flex;
-            gap: 15px;
+            gap: 5px;
             overflow: hidden;
             flex: 1;
             transition: transform 0.5s ease-in-out;
+            width: 100%;
         }
 
         .carousel-image {
-            width: calc(33.333% - 10px);
+            width: 33.333%;
             height: 300px;
             object-fit: cover;
             border-radius: 4px;
             flex-shrink: 0;
+            min-width: 33.333%;
         }
 
         .carousel-button {
@@ -605,8 +607,8 @@
             }
 
             .carousel-image {
-                width: calc(50% - 8px);
-                height: 200px;
+                width: 33.333%;
+                height: 180px;
             }
 
             .carousel-button {
@@ -620,7 +622,7 @@
             }
 
             .carousel-track {
-                gap: 8px;
+                gap: 5px;
             }
         }
     </style>
@@ -838,6 +840,11 @@
         // Initialize carousel
         function initCarousel() {
             const track = document.getElementById('carouselTrack');
+            if (!track) {
+                console.error('Carousel track not found');
+                return;
+            }
+            
             carouselImages.forEach(img => {
                 const imgEl = document.createElement('img');
                 imgEl.src = img;
@@ -859,13 +866,17 @@
 
         function updateCarouselPosition() {
             const track = document.getElementById('carouselTrack');
-            const slideWidth = 100 / 3;
-            const translateAmount = carouselPosition * slideWidth;
+            if (!track) return;
+            const translateAmount = carouselPosition * 33.333;
             track.style.transform = `translateX(-${translateAmount}%)`;
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', initCarousel);
+        // Initialize on page load with better timing
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousel);
+        } else {
+            setTimeout(initCarousel, 100);
+        }
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
