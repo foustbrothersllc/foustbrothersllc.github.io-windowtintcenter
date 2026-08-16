@@ -805,16 +805,11 @@
         // Initialize Map
         const map = L.map('map').setView([36.038779, -79.855749], 17);
         
-        // Satellite layer
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            attribution: '© Esri',
-            maxZoom: 19
-        }).addTo(map);
-        
-        // Labels/text overlay layer
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-            attribution: '© Esri',
-            maxZoom: 19
+        // Google Hybrid (Satellite + Labels)
+        L.tileLayer('https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            maxZoom: 19,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: '© Google'
         }).addTo(map);
 
         const marker = L.marker([36.038779, -79.855749]).addTo(map);
